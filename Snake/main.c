@@ -126,7 +126,7 @@ void moveSnake(Snake *snake,KeyboardDir direction){
 
 }
 
-void food(){
+void food(Snake *snake){
 
 srand(time(NULL));
 int randy = rand() % 27;
@@ -136,8 +136,10 @@ srand(time(NULL));
 int randx = rand() % 7;
 int x = randx + 2;
 gotoxy(y,x);
-printf("m");
+printf("*");
 
+if( x == snake -> X) {return;}
+if( y == snake -> Y) {return;}
 }
 
 int main(){
@@ -147,7 +149,7 @@ int main(){
     clrscr();
     hideCursor();
     drawBoundaries();
-    food();
+    food(&snake);
     while(1){
         //clrscr();
         //drawBoundaries(1);
