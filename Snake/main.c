@@ -5,9 +5,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <conio.h>
-
 #include <time.h>
-#include <errno.h>    
+#include <errno.h> 
+
 
 void hideCursor(){
     printf("\e[?25l");
@@ -126,15 +126,17 @@ void moveSnake(Snake *snake,KeyboardDir direction){
 
 }
 
-void random(){
+void food(){
 
 srand(time(NULL));
-int randy = rand() % 9;
-int y = randy + 1;
+int randy = rand() % 27;
+int y = randy + 2;
 
 srand(time(NULL));
-int randx = rand() % 9;
-int x = randx + 1;
+int randx = rand() % 7;
+int x = randx + 2;
+gotoxy(y,x);
+printf("m");
 
 }
 
@@ -145,6 +147,7 @@ int main(){
     clrscr();
     hideCursor();
     drawBoundaries();
+    food();
     while(1){
         //clrscr();
         //drawBoundaries(1);
