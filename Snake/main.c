@@ -126,6 +126,18 @@ void moveSnake(Snake *snake,KeyboardDir direction){
 
 }
 
+void random(){
+
+srand(time(NULL));
+int randy = rand() % 9;
+int y = randy + 1;
+
+srand(time(NULL));
+int randx = rand() % 9;
+int x = randx + 1;
+
+}
+
 int main(){
     Snake snake;
     snake.X = 5; 
