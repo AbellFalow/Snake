@@ -70,7 +70,7 @@ void drawBoundaries(){
 
 void drawSnake(Snake snake){
     gotoxy(snake.X,snake.Y);
-    printf("@");
+    printf("O");
 }
 
 void clearSnake(Snake snake){
